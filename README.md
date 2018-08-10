@@ -268,7 +268,3 @@ e.g.
 docker-compose -f docker-compose-linux.yml down -v
 ```
 
-
-## We would love your feedback!
-
-If you found this example helpful and would like to see more such Getting Started examples for other standard formats, we would love to hear from you. If you would like to contribute examples to this repo, we'd love that too!
