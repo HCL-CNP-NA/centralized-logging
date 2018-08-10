@@ -85,67 +85,15 @@ The following Beats modules are utilised in this stack example to provide data a
 
 ## Step by Step Instructions - Deploying the Stack
 
-1. Download the `full_stack_example.tar.gz` (OSX/Linux) or `full_stack_example.zip` file.  This is provided as there is no easy way to download a sub folder of this repository.  This represents the folders within this directory compressed.
-   
-    For linux/OSX:
-    
-    ```shell
-    wget https://raw.githubusercontent.com/elastic/examples/master/Miscellaneous/docker/full_stack_example/full_stack_example.tar.gz
-    ```
-   
-   For Windows (powershell):
-   ```shell
-   wget https://github.com/gingerwizard/examples/raw/master/Miscellaneous/docker/full_stack_example/full_stack_example.zip -outfile "full_stack_example.zip"
-   ```
-   
-1. Extract the directory
-    
-    For linux/OSX:
-    
-    ```shell
-    tar -xvf full_stack_example.tar.gz
-    ```
-
-1. The above command should result in a `full_stack_example` folder. For OSX and Windows ensure that this folder is bind mounted and thus available to the docker containers.  Further instructions on achieving this:
-
-    * [Windows](https://docs.docker.com/docker-for-windows/#shared-drives)
-    * [OSX](https://docs.docker.com/docker-for-mac/#file-sharing)
-    
-    Note: This step can be skipped if you extract the stack example into a subdirectory of `/Users` on OSX or C:\Users` on Windows.` These directories are bind mounted by default.
-
-1. If using OSX or Windows, ensure the VM used to host docker is allocated a minimum of 4GB. Further instructions on achieving this:
-
-    * [Windows](https://docs.docker.com/docker-for-windows/#advanced)
-    * [OSX](https://docs.docker.com/docker-for-mac/#advanced)
-
-1. For those using the older version of the Docker implementation for Windows i.e. Docker Toolbox, that utilises a Virtualbox VM, this currently [does not support mapping ports to localhost](https://github.com/docker/for-win/issues/204). After installing the loopback adapter, map the following the ports for the docker VM using the network settings in the VirtualBox interface as shown below:
-
-
-![Configure Port Mapping](https://user-images.githubusercontent.com/12695796/29459741-0d016854-841d-11e7-9bc5-23d360de0b51.png)
-
-
-1. Navigate into the full_stack_example folder from a terminal or powershell, and issue the following command. Adjust for your host operating system as shown.
-
-    ```shell
-    cd full_stack_example.tar.gz
-    ```
-    
-    For osx
-    
-    ```shell
-    docker-compose -f docker-compose-osx.yml up
-    ```
-    
-    For windows
-    
-    ```shell
-    docker-compose -f docker-compose-windows.yml up
-    ```
+1. Clone this repo on the manager node 
+   `git clone https://github.com/HCL-CNP-NA/centralized-logging.git`
+  
+2. Execute following command
     
     For linux
     
     ```shell
-    docker-compose -f docker-compose-linux.yml up
+    nohup docker-compose -f docker-compose-linux.yml up &
     ```
 
 **The above command may take some time if you don't have the base centos7 images**
